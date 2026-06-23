@@ -1,35 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SubManager</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
-    <title>SubManager</title>
 </head>
+
 <body>
-    <main>
-        <div class="grid">
-            <div class="navs">
-                <div class="logo">
-                    <img src="logo.png" alt="">
-                </div>
-                <div class="links">
-                    <a href="/"><i class="fa-regular fa-house"></i> DashBorad</a><br>
-                    <a href="/subscription.html"><i class="fa-solid fa-receipt"></i> My SubsCription</a><br>
-                    <a href="/plans.html"><i class="fa-solid fa-tags"></i> Plans & Pricing</a><br>
-                    <a href="/bill.html"><i class="fa-solid fa-wallet"></i> Billings</a><br>
-                    <a href="/invoices.html"><i class="fa-solid fa-file"></i> Invoices</a><br>
-                    <a href=""><i class="fa-regular fa-credit-card"></i> payment Method</a><br>
-                    <a href=""><i class="fa-solid fa-file-invoice-dollar"></i> Usage</a><br>
-                    <a href=""><i class="fa-solid fa-ticket"></i> Coupans</a><br>
-                    <a href=""><i class="fa-solid fa-circle-question"></i> Support</a><br>
-                    <a href=""><i class="fa-solid fa-gear"></i> Setting</a><br>
+    <div class="main">
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="brand-icon">S</div>
+                <div>
+                    <h1>SubcribeX</h1>
+                    <p>Manage. Bill. Grow.</p>
                 </div>
             </div>
-            <div class="cnt"></div>
-        </div>
-    </main>
-    <script src="script.js"></script>
+            <nav class="nav-links">
+                <a class="active" href="#"><i class="fa-regular fa-house"></i> Dashboard</a>
+                <a href="/frontend/subscription.html"><i class="fa-solid fa-receipt"></i> My Subscription</a>
+                <a href="#"><i class="fa-solid fa-wallet"></i> Billing & Payments</a>
+                <a href="#"><i class="fa-solid fa-file"></i> Invoices</a>
+                <a href="#"><i class="fa-regular fa-credit-card"></i> Payment Methods</a>
+                <a href="#"><i class="fa-solid fa-chart-line"></i> Usage</a>
+                <a href="#"><i class="fa-solid fa-ticket"></i> Coupons</a>
+                <a href="#"><i class="fa-solid fa-gear"></i> Account Settings</a>
+                <a href="#"><i class="fa-solid fa-headset"></i> Support</a>
+                <a href="#"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+            </nav>
+            <div class="promo-card">
+                <div class="promo-icon"><i class="fa-solid fa-gift"></i></div>
+                <div>
+                    <h3>Refer & Earn</h3>
+                    <p>Invite friends and earn rewards.</p>
+                    <button>Invite Now</button>
+                </div>
+            </div>
+        </aside>
+
+        <main class="content">
+            <header class="page-header">
+                <div>
+                    <p class="name">Welcome back, Ananya! 👋</p>
+                    <h2>Here’s what’s happening with your subscription.</h2>
+                </div>
+                <div class="actions">
+                    <button class="icon-btn"><i class="fa-regular fa-bell"></i></button>
+                    <button class="icon-btn"><i class="fa-solid fa-circle-question"></i></button>
+                    <div class="profile">
+                        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxAQEBAQEBAVFg8WDw8QGBcWEBUXFxIVFRUXFxgXFxcYHSggGBslGxUYITEhJSkrLi4uGB8zODMsNygtLisBCgoKDg0OGxAQGi8fICUvLy0tKy0tLS0tLS0rLSstLS0tLS0tLS0tLS0tKy0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIALcBEwMBIgACEQEDEQH/xAAcAAEBAAIDAQEAAAAAAAAAAAAAAQUGAwQHAgj/xABAEAABAwEFBAcGBAUCBwAAAAABAAIRAwQFEiExBkFRYRMicYGRobEHMkLB0fAjUmLhFHKSovEkwhUWM4KDo7L/xAAZAQEAAwEBAAAAAAAAAAAAAAAAAQIEAwX/xAAjEQEAAgICAgICAwAAAAAAAAAAAQIDESExEkEEMhMiUWFx/9oADAMBAAIRAxEAPwD1oKoisqqKIgqIogqIiAiIgIiICIogqiq4a1pYz3nAevgoS5UWEvDaNlLSm53eGjzX3R2gpOYHHI72zJCjyhPjLMKLpWC9aNeRTeC4at0I7l3VO1ZjSIihUgiKICIiCKKqICiqiCFRUqIC+SqiD4hFUQdxERAREQEREBVRVAREQRVRVAUcQASTAGaqwt/W2Pw2nt5nh2D6Ktraja1Y3OnHel8QCG5DzP3w1Wr1bfaKhLaQEcSJjtjTxXZvGtSo0jXtL8NMcdXE7mjiVqNuvmvagRZmuZTGjcLgDzJbme/yWabTLTWsRxDJ2tlXPHVbwIlv1lSnUbTpODCMUSSDKwtkuGv7ziZJHZG9d2jdvRlxcYbBGZ1zUbX8WNs17ltUObULKgdIdOU8169s1fItVKXQKrQMQGh/UORXi1s6EOMP38x6rLbNbQmy1Wuk4ZggjUHUZK1L6c7029qKhXXu+3U69NtSk4OYRqPQ812VpZUUVUUgoqVCgiIhQRERBFFVEEREQRERB20REBERAREQVERAREQEREHxWqYWl3AErUZNSqZ/Nn6nzK2G/K2Ckefyz+S1G0WjoaD3z1iMM8C7U9wk9yz5bc6d8VWmXtXdet59ACf4ai6GgaGMi49pz7IXqd3XTTo0w1rRkOC829k1lLnVa5GbnHuEr1oDJUry7X44dCtQbwWKvCy0yD1VnHgLH25jYMmEkrLzTaK6mw5zQtNpWotJa7cY4x+y9OvWvZ+szpqeONMYleZX7QLanA/CeP6Sq1/ha/W227H7SustUFjppuPWbilrxvg7nL2yzV21GNqMMtc0OHYV+VrPanAyDvzB1y5r9A+zO2uq2FmLOCQOz/M+S7Y+J0z5I3G22KKqLu4BUVKiCIiIIiKICiqhQRQqqICIiDtoiICIiAiIgqIiAiIgIiIMDtPU9xnGT3fYWg7YVi4Mswe1rntObnECXy3vOEPyW63+/FXj8tOO9xH7ryPbCv09sY0adNA5YYaPPEe9Y7z+7Zir+vDcNmruNnsoItYpsEkHABi5mTl4+C+ae0LxUwU7wbVJ0a5sA8sQ08Cs5/y4ypSYHAnCQQOBGYMcV0RsWzpHO0DonsBxAA7hO4KY6W98sjR2gpYSKlRrKzQMTC7rQdHADMtP5hl3ghaXfV7i0vcBUc6l1oFPMvgEmN2QBz5dseg3fdYFW0VSBBpUqDYG5mIme9/qtPsd0YbQ9hDQQ+o9piDDjx7SdE49kb9NVoW2yNM06FQdc08eOZcP5coy1Cxu0dkfDSCTTMnMAFpjLQDIr1Ojs3RbmWjjpkte23oMbQfA0h3gRHqU3ynx3DyymZaHHUHPuXvXsjd/oQ3eHOPaDH0K8KsLMXSCNWv8f8he2+yOp+C5m8U6fq76q9Z/aHG8fpL0BRUqLQzCiqiCIiIIoqoUBfKpUQFFVEEREQdxERAREQEREBVREFRREFRRVBpt71oqWh/5QT/SD9V4vdNp6a1ZnrSXNzyMag+Er1XaOt+HaSN/SfT5LxA2WZG+Pr9Fh4mZb6biH6au+sH02PBjExp8RK6VstNTpG02ObidPw6AanVa57L7x6a7KLZ69IuoOHDCer/YWrNMD6dXpejdULur1Ylrdd5G/wCSvP8ACK88u/Vt/RBzOjdDWjrECHHfBmZ7t60O2Xi+rWfFMgh7S1+mhzjOdPFbdbL1qEENsryBrJH1yWo3neVoxSaDGzoC6T/aSos60x21vTYKFqDqcl7p3iR6xK0jbW1YbNWcM/cGZOcvbvWXsPS9C51aA4uJAbMARxOua1PbesG0G0561So3wbmT4x4qK8yredVlr1yMk9od6L2L2WjCXDi1n+/5heUXFS3/AKXec/ReqezGS5p3dD6PePmrV+7jf6PR1FSotbIFQoogKIiAoiiAoUKhQERRAREQdxERAREQEREBERAREQF8V3Q1x/SfRfa4bV7scSPDVRKYeZ3/AFOo4TrjHmV5mKEY3cHs85g+RW/bR1pLo06Z4HitbtNnaKVbF7xDAO1uL1Jhef7ejH1c+wN5ust4CiBNG0yCPyvaHODh4Ed/JexWcheG7Mu6S9rK1ujaj3dwY8fNe2mgRm05rttxn25bXZOkCwF4XMwdYlZS0Xk5g6zT2ha3fF/AtIEyonS9Zsxt6WprAZOQC8pva83Wq0F5yaOq0cBPqfvRble1Vz2klaAwRUPJx9VOP2rlnpudxUIH/jHzXo3sozY87msDO/G4n1HitGuWP/XPkfqvQPZHTH8JUdxrvH9rEx/ZXL9W+FREWtkQqKlRBFFVCgKIiCKIhQREQoIiKIO8iIgIiICIiAiIgIiEoKuGtvJ0AVfaGN95wCwt63zTwuaySSCJ08N6eMz0eUR286vQsDqjyYpsLnSd/WmfvetRsHSW97sEhmJxcY55ALb73uVtUdZ5LcTRh3AnITxjmu7dNgp0QWU4jC3dlIEHvmVOH4cxO7mb5ka1RjrnuunZr0oPiA+zdG3k5pE+II8F6jT0WgX/AEiaTXtH4tJ7ajT2ZEHuJW13FeQrU2nfAXP5FPHJ/rp8e/lT/HYttEEFaheF1y4lbpXKx9poSCs1oaa2088vOxdUjkvPqliPT1GRkWuf2RqvXrdZCZyWm26xik6pUgYsJaJ3Sc/IK/x67vpT5FtU26uztsyAOoZB7pC9N9kFcGy1ae9tY/8Ay39l4/TaWuxDIGWnvE+gW9+zu9jZazukDhSeBJDSYI35K845pdz/ACRej2NRdaheFGoAWVGmeefgdFzhw4rq46UqKqFSIVFV8lAURRAUKqhQFCiIIiIg7yiIgIiIKiiIKiIgjnAAkmAN53LC3he5Mtp6aTvPZwX1tJXAYGTAycc9w0Wuvecs/v7K0YscTG5Z8uSYnUPutaXOJknxXQtjj3/svq0Pgk7svvyXy8gx2Zdy0xGmeZ247I4HF2j1UrNwmmRpLmagZHMa56yIA356LgqUywFze2OMFclGsanUxFrnQyRqCTkRG+VZUvK1Mo0XvqGGBrnF0ThG7LeSYESNdVj9itpbM9vVq4depUye0A6z7rhEac1r20tZ1riwUTLg5rqpkEMwD3C4ZOdizMZDCO6XPcJoFzH+8IeCI6zd8TlI18FnyY/yzr00Y8n4o37evU6ofBByPBdsUm4YWj7PVxQJZje5r4c2QA0AADqgARkM+Y557hRrgidy87JjmlvGXo47xevlDGW+gGhxOTQCV57f1Eu1ylzScxBxCWjugjuKzW3e1TaRbTa0mSS1sEGo5vxE7qYntJ4QV5x/xC0mua7+uCMLmRDcAMgADJpBzBjVacGPw51yzZ8n5OInhmXUmhrYz/EZpPYfJZawUxEj1WEr21tRlJzMRaXu+GHMcAYDwMt4zHbxC2K72YWieXotldWljturI2N8Zx1uOhWx3RtCKZAqNkHeAMQ+q0+nW4dq7fSQEtirPcIrltHUvVLPXZUaHscC07x95L7XmN2bQOsry7F+FMvaTkQNdd/NemzOY01WPJTxlsx38oRQqlQqi6KKlRAUKKFAUVUQFERB3lFVEBVREFREQVRzgASdAJRdG+a2GkRvJju1KmsbnSLTqNsDeVoxlzjz7oWIaZBkdYmfPJdt1STB5rEsq4ahbOeZ++Wi9CsajTBM7lzVHSPDw+5XAx0GJ3xy0XM+PX6rruarKucaa/ZXDVs4OehhVrtRzH35r7xZZ8UHUsVhp0S4NYG5k5AZyZXdrWdrhnqDkRu3L7In0VHDko2nTH0DhcWQBnOcGD+kHfp4rr3/ALR1WMFmswms9uLHEtpsJIDhPvEkEAcpPA9621MILpbpni0jxGegXQ2ssD6VGz2gxieYgZQ2oGlsyIJJczOTqROS45K1tMTLtjvasTENUs9ymOlqOL69V2EOcSXEal2eekDuWWp3Y0NdA3GOa79CzGcR+GmKbBwEa9q5HsyLRwj0XatYjpxtaZli7LdbGS4kiYkA5EDivuvXk4WaZDTguW1id+XWXHTowQY+yFbSu31ZmQBx0XPWrQHTuHnC+NBPesXetchrhvJSSFq2gGm8mIMt7cX7Z9y9i2UtvT2KzvmT0TWH+ZnVPpPevDyQWgRqQdeAgZeK9L9lFtxUbRRJ9yoyoOyoCPWn5rLnjddtOGdW03or5KpUKytSIiiAVCihQFERARREHeREQEREBVRVAC17aOvLgzgPM5/RbCFpl7V8VR54uPgu2CN224551XTpVX+Swdte8V2CRgzk8jpHeVlajs3feiwO0tTDSFSYjKVthjZzWO77818P+/vuXBY7WKlKm4HMsa7mJghfTnHihEjwZPd6qsfO/glSoIJjn5iVw2gw0ubxE9m/1RLvs0Pf6qOP33qUXg4f1AnwKVH6GN8qE7cFofkBG/8ANhmInNYjampFjceD6IHXLjHSU+OgzKylqYS5sg78gYO7NYja9v8ApH8ZpD3RJ/FYJxTKpbpanbvY4blyHnC47VUIjnhHmuRtMuIG6T35yPVS2tH4f39/uujm61SlMTvLvkuCs6XNaNZ9F2r1r9Gyd5E+QAWMu1pLy9/wsLvLJSjTuWqGzO6AtcvSpLZ/UFkbZaRggZuOI8tVgr1rBtJnEkH78VS88L0jly0qhL25ggCRyW6+ym1xbatPc+zu/qY5pHkXLRrKcyQPhhbBsDaMF42YzkXup/1sc0eZC535q6U4s9wK+SqVFibERFEBQoVEBRFCgIpKIO+iiqAiIgKqKoJUdAJ4AnwC8+tbyXH+Zvqt5vKpho1XcKbvRefNqSe9vpK1fGjiZZfkT1DjtRgzn4wsHtOC6xV4ObYf4EHKFlbfVLWF43QfOF0XOFUPblhfTLZG6frIWrXDNvUujstbmvoHE8AsYZJOgAxSTwg6rJ2atiDSG1HTwacP9R3x5rWvZrQw1rQ459H0NAjjNQye0BngStmfU6Nxbuyy3gATM6cN6pW24dLU8ZfFS0VC4A0X58255Cfi0mc+xWk+uZ/07i2NMbZmHR8Wk4V3qV31rRSNoolnRMc7GHYsR6rSQIBDTAyxESYAklTpgdHDCXDSPCdBu3qd+to1/TqmtXZmKAgNdhHSMnHnIzMwZC7FitRqB4LMJZUcwguBI0Ikgxody6tutlMupNdUDcLi/IBzi4ENAwkawXHeFwXNROGo9xID6hjKJDQGggbpDVWJ3KZjhlqpeC3CZdimJAyzGqx+0bXusrw4dUHHyydi5jULs2kMAEk/DJEyBiavu+7XTN3mg2kBU6My7LruLRmSADnrnJExoAl+uijiZOUcCfJda8D7oEYsRzLoGgMaLv0KQIaZJloPiuhedlxMyyOIOBPwljg8OPe0K3pWO+WLvS0AkS3MYWGXsHWGg6xGU7+9cAtjQHNeHDG2Or1paJAjDPADXeuneN4PLgypSY0FxAexsNYREBzfy56zvJWRumzvtB6NtUU3toe64Zvcwv6jSCNxmc4g5blTyX8f6Yq02kTh9xubW4mOYHamcxyWCvStjqMaDLQGAHcd8+C2u31wxxDP+o97id5wh2Q7wAtVvED+IecIBAwmAAMRJkwN8QqZNr49du7Qd1Se1d+5a3R1qNT8lak/+l4d8ljKR6vgu5S90iVaOVJ4foty+VxWSsH06bxo6mx4/wC5oPzXIVhbQqKKEolVFJQoChRQlBJRfMogyIKqIgIiIKiIgxO1VbDZanMtb3TJ8gtFs7yZJ16xRFt+P9GLP9nHVGIEHhHktVp2jo6jqTjvMHgJn5Ii7uLIbF2FrH22sRm+qGjsDcR7M3eS7dG6nUxAqOBnQE4dfykkBRFWIiFpmZV131AHQWZxMsJmNJAeAY3ZLsUbuGXSPc88CYbpAGFsA5ADOVETUG5fFuoABuFgAAqRAAjqj/Om5crawYAA34d/ciKYRPSOrFxHUDocMjp7pM+SXnUcabMiG9I0fDHvx2yoiiVodqzPhjOTGjwAC6dtrSx+ZGRAIMEZajgZRFPpX2wuBrm5gEdbn8ThwH5eCxteiWgAAOp5dR4kQM8p005jkiKsxuFonUun/F1gZGBoHI+eGB5LCPrlzi46uJd4oiz2jUtFJ3DIUNAu9Zjr970RdauVnuOxtbHYLKTupBn9BLP9qzBURY7/AGlrr1CFfKIqrCiIghK+CURB8yiIg//Z" alt="User avatar">
+                        <span>Ananya Sharma</span>
+                    </div>
+                </div>
+            </header>
+
+            <div class="cards">
+                <div class="stat-card primary">
+                    <div class="stat-icon"><i class="fa-solid fa-crown"></i></div>
+                    <div>
+                        <span class="stat-span">Current Plan</span>
+                        <h3>Pro Plan</h3>
+                        <span class="tag active">Active</span>
+                        <p>₹999 / month</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fa-regular fa-calendar-check"></i></div>
+                    <span class="stat-label">Next Billing Date</span>
+                    <h3>20 June 2025</h3>
+                    <p>5 days remaining</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fa-solid fa-wallet"></i></div>
+                    <span class="stat-label">Amount</span>
+                    <h3>₹999.00</h3>
+                    <p>Billed monthly</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fa-solid fa-stopwatch"></i></div>
+                    <span class="stat-label">Status</span>
+                    <h3>Active</h3>
+                    <p>Auto-renew is on</p>
+                </div>
+            </div>
+
+            <section class="dashboard-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Subscription Overview</h3>
+                        <a href="#">View Details</a>
+                    </div>
+                    <div class="card-inner">
+                        <div class="card-summary">
+                            <div class="icon">
+                                <i class="fa-solid fa-crown"></i>
+                            </div>
+                            <h4>You are on Pro Plan</h4>
+                            <p>Enjoy unlimited features and priority support.</p>
+                            <button class="primary-btn">Upgrade Plan</button>
+                        </div>
+                        <div class="overview-list">
+                            <div><i class="fa-solid fa-check"></i> Unlimited Projects</div>
+                            <div><i class="fa-solid fa-check"></i> 100 GB Storage</div>
+                            <div><i class="fa-solid fa-check"></i> Priority Support</div>
+                            <div><i class="fa-solid fa-check"></i> Advanced Analytics</div>
+                            <div><i class="fa-solid fa-check"></i> Custom Domain</div>
+                            <div><i class="fa-solid fa-check"></i> API Access</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card usage-card">
+                    <div class="card-header">
+                        <h3>Usage Overview</h3>
+                        <select>
+                            <option>This Month</option>
+                            <option>Last Month</option>
+                        </select>
+                    </div>
+                    <div class="usage-item">
+                        <div>
+                            <span>Storage</span>
+                            <strong>65 GB / 100 GB</strong>
+                        </div>
+                        <div class="progress"><span style="width:65%"></span></div>
+                    </div>
+                    <div class="usage-item">
+                        <div>
+                            <span>Projects</span>
+                            <strong>23 / Unlimited</strong>
+                        </div>
+                        <div class="progress"><span style="width:70%"></span></div>
+                    </div>
+                    <div class="usage-item">
+                        <div>
+                            <span>API Calls</span>
+                            <strong>12,680 / 50,000</strong>
+                        </div>
+                        <div class="progress"><span style="width:55%"></span></div>
+                    </div>
+                </div>
+
+                <div class="card invoices-card">
+                    <div class="card-header">
+                        <h3>Recent Invoices</h3>
+                        <a href="#">View All</a>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Invoice ID</th>
+                                <th>Date</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>INV-2025-00045</td>
+                                <td>20 May 2025</td>
+                                <td>₹999.00</td>
+                                <td class="status paid">Paid</td>
+                                <td><i class="fa-solid fa-download"></i></td>
+                            </tr>
+                            <tr>
+                                <td>INV-2025-00044</td>
+                                <td>20 Apr 2025</td>
+                                <td>₹999.00</td>
+                                <td class="status paid">Paid</td>
+                                <td><i class="fa-solid fa-download"></i></td>
+                            </tr>
+                            <tr>
+                                <td>INV-2025-00043</td>
+                                <td>20 Mar 2025</td>
+                                <td>₹999.00</td>
+                                <td class="status paid">Paid</td>
+                                <td><i class="fa-solid fa-download"></i></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="card billing-card">
+                    <h3>Billing & Payment</h3>
+                    <div class="billing-row">
+                        <span>Payment Method</span>
+                        <strong><i class="fa-brands fa-cc-visa"></i> **** 4242</strong>
+                    </div>
+                    <div class="billing-row">
+                        <span>Billing Cycle</span>
+                        <strong>Monthly</strong>
+                    </div>
+                    <div class="billing-row">
+                        <span>Next Billing Date</span>
+                        <strong>20 June 2025</strong>
+                    </div>
+                    <div class="billing-row">
+                        <span>Auto Renew</span>
+                        <strong>On</strong>
+                    </div>
+                    <div class="billing-row">
+                        <span>Tax</span>
+                        <strong>18% GST</strong>
+                    </div>
+                    <button class="secondary-btn">Update Billing Preferences</button>
+                </div>
+            </section>
+        </main>
+    </div>
 </body>
+
 </html>
