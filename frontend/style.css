@@ -13,12 +13,14 @@
   --muted: #667085;
   --primary: #6d5bff;
   --primary-soft: #eff0ff;
-  --success: #22c55e;
+  --success: #3db86a;
   --border: #e3e5ff;
   --shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+  --ff:sans-serif;
 }
 
 html, body {
+  font-family: ff;
   min-height: 100%;
   background: var(--bg);
   color: var(--text);
@@ -69,11 +71,6 @@ button, select {
 .brand p {
   font-size: 13px;
   color: var(--muted);
-}
-
-.nav-links {
-  display: grid;
-  gap: 10px;
 }
 
 .nav-links a {
@@ -210,7 +207,7 @@ button, select {
 }
 
 .stat-card.primary {
-  background: linear-gradient(135deg,#f5f4ff,#eff2ff);
+  background: linear-gradient(135deg,#f5f4ff,#d1d8f6);
 }
 
 .stat-icon {
@@ -377,7 +374,7 @@ button, select {
 
 .invoices-card table {
   width: 100%;
-  border-collapse: collapse;
+  /* border-collapse: collapse; */
   color: var(--text);
 }
 
@@ -393,14 +390,20 @@ button, select {
   font-size: 13px;
   font-weight: 600;
 }
+.invoices-card tbody tr{
+  padding: 0px 0px;
+
+}
 
 .invoices-card td {
   font-size: 14px;
 }
 
 .invoices-card .status {
-  border-radius: 999px;
-  padding: 6px 12px;
+  text-align: center;
+  width: 20px;
+  border-radius: 99px;
+  padding: 4px 12px;
   font-size: 12px;
   text-transform: uppercase;
   color: #0f172a;
@@ -411,17 +414,16 @@ button, select {
   background: #dcfce7;
   color: #166534;
 }
-
+.invoices-card .status.cancel {
+  background: #ff0000;
+  color: #ffffff;
+}
 .billing-card .billing-row {
   display: flex;
   justify-content: space-between;
   gap: 16px;
   padding: 14px 0;
   border-bottom: 1px solid #f1f3ff;
-}
-
-.billing-card .billing-row:last-child {
-  border-bottom: none;
 }
 
 .billing-card h3 {
@@ -439,47 +441,3 @@ button, select {
   cursor: pointer;
 }
 
-@media (max-width: 1120px) {
-  .main {
-    grid-template-columns: 1fr;
-  }
-
-  .sidebar {
-    flex-direction: row;
-    overflow-x: auto;
-    min-height: auto;
-  }
-
-  .nav-links {
-    flex-direction: row;
-    gap: 10px;
-  }
-
-  .dashboard-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .overview-inner {
-    grid-template-columns: 1fr;
-  }
-
-  .stats-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 760px) {
-  .stats-grid,
-  .dashboard-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .page-header {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .top-actions {
-    justify-content: flex-start;
-  }
-}
