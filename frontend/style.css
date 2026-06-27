@@ -16,26 +16,33 @@
   --success: #3db86a;
   --border: #e3e5ff;
   --shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
-  --ff:sans-serif;
+  --ff: sans-serif;
 }
 
-html, body {
-  font-family: ff;
+html,
+body {
+  font-family: var(--ff);
   min-height: 100%;
   background: var(--bg);
   color: var(--text);
 }
 
-button, select {
+button,
+select {
   font: inherit;
 }
+
 
 .main {
   display: grid;
   grid-template-columns: 260px auto;
   min-height: 100vh;
+  align-items: start;
 }
 
+.overlay{
+  display: none;
+}
 .sidebar {
   background: #fff;
   border-right: 1px solid #edf0ff;
@@ -44,6 +51,7 @@ button, select {
   flex-direction: column;
   gap: 28px;
 }
+
 
 .brand {
   display: flex;
@@ -56,7 +64,7 @@ button, select {
   width: 42px;
   height: 42px;
   border-radius: 14px;
-  background: linear-gradient(135deg,#6d5bff,#1b105e);
+  background: linear-gradient(135deg, #6d5bff, #1b105e);
   color: #fff;
   display: grid;
   place-items: center;
@@ -96,7 +104,7 @@ button, select {
   margin-top: auto;
   padding: 20px;
   border-radius: 24px;
-  background: linear-gradient(180deg,#f6f1ff,#fff);
+  background: linear-gradient(180deg, #f6f1ff, #fff);
   border: 1px solid #edeaff;
   display: grid;
   gap: 14px;
@@ -208,7 +216,7 @@ button, select {
 }
 
 .stat-card.primary {
-  background: linear-gradient(135deg,#f5f4ff,#d1d8f6);
+  background: linear-gradient(135deg, #f5f4ff, #d1d8f6);
 }
 
 .stat-icon {
@@ -369,13 +377,13 @@ button, select {
 .progress span {
   display: block;
   height: 100%;
-  background: linear-gradient(90deg,#6d5bff,#8f74ff);
+  background: linear-gradient(90deg, #6d5bff, #8f74ff);
   border-radius: 99px;
 }
 
 .invoices-card table {
   width: 100%;
-  /* border-collapse: collapse; */
+  border-collapse: collapse;
   color: var(--text);
 }
 
@@ -391,7 +399,8 @@ button, select {
   font-size: 13px;
   font-weight: 600;
 }
-.invoices-card tbody tr{
+
+.invoices-card tbody tr {
   padding: 0px 0px;
 
 }
@@ -415,10 +424,12 @@ button, select {
   background: #dcfce7;
   color: #166534;
 }
+
 .invoices-card .status.cancel {
   background: #ff0000;
   color: #ffffff;
 }
+
 .billing-card .billing-row {
   display: flex;
   justify-content: space-between;
@@ -442,3 +453,127 @@ button, select {
   cursor: pointer;
 }
 
+.brand-r {
+  display: none;
+}
+
+.brand-icon-r {
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #6d5bff, #1b105e);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+}
+
+.brand-r h1 {
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.brand-r p {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+@media (max-width:600px) {
+  .brand-r {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 16px;
+  }
+  .brand-r .r{
+    display: flex;
+    gap: 10px;
+  }
+
+  .menu-btn {
+    width: 44px;
+    height: 44px;
+    border: 1px solid #e5e7ff;
+    border-radius: 14px;
+    background: #fff;
+    cursor: pointer;
+  }
+
+  .main {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: -280px;
+    width: 268px;
+    height: 100vh;
+    z-index: 1000;
+    transition: left 0.3s ease;
+    background: #fff;
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+
+  .overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 900;
+  }
+
+  .overlay.show {
+    display: block;
+  }
+
+  .content {
+    padding: 20px 16px;
+  }
+
+  .page-header h2 {
+    font-size: 24px;
+  }
+
+  .actions button{
+    display: none;
+
+  }
+
+  .profile {
+    background: none;
+  }
+  .profile span{
+    display: none;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .card-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .invoices-card .status{
+    padding: 2px 4px;
+    border-radius: 10px;
+  }
+
+}

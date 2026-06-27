@@ -10,21 +10,22 @@
 </head>
 
 <body>
-    <!-- Responsive Header -->
     <div class="brand-r">
-        <div class="brand-icon-r">S</div>
-
-        <div class="t">
-            <div class="brand-text">
-                <h1>SubscribeX</h1>
+        <div class="r">
+            <div class="brand-icon-r">S</div>
+            <div>
+                <h1>SubcribeX</h1>
                 <p>Manage. Bill. Grow.</p>
             </div>
         </div>
+
+        <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="sidebar">
+            <i class="fa-solid fa-bars"></i>
+        </button>
     </div>
     <div class="main">
-        <div class="sidebar">
-
-
+        <div class="overlay" id="overlay"></div>
+        <div class="sidebar" id="sidebar">
             <div class="brand">
                 <div class="brand-icon">S</div>
                 <div>
@@ -35,7 +36,7 @@
             <nav class="nav-links">
                 <a href="index.html"><i class="fa-regular fa-house"></i> Dashboard</a>
                 <a class="active" href="#"><i class="fa-solid fa-receipt"></i> My Subscription</a>
-                <a href="#"><i class="fa-solid fa-wallet"></i> Billing & Payments</a>
+                <a href="billing.html"><i class="fa-solid fa-wallet"></i> Billing & Payments</a>
                 <a href="#"><i class="fa-solid fa-file"></i> Invoices</a>
                 <a href="#"><i class="fa-regular fa-credit-card"></i> Payment Methods</a>
                 <a href="#"><i class="fa-solid fa-chart-line"></i> Usage</a>
@@ -152,6 +153,28 @@
                     }
                 }
             });
+
+            const menuBtn = document.getElementById("menuBtn");
+            const sidebar = document.getElementById("sidebar");
+            const overlay = document.getElementById("overlay");
+
+            function openSidebar() {
+                sidebar.classList.add("open");
+                overlay.classList.add("show");
+                menuBtn.setAttribute("aria-expanded", "true");
+            }
+
+            function closeSidebar() {
+                sidebar.classList.remove("open");
+                overlay.classList.remove("show");
+                menuBtn.setAttribute("aria-expanded", "false");
+            }
+
+            menuBtn.addEventListener("click", () => {
+                sidebar.classList.contains("open") ? closeSidebar() : openSidebar();
+            });
+
+            overlay.addEventListener("click", closeSidebar);
         </script>
 </body>
 

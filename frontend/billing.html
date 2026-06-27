@@ -3,10 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SubManager</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billing & Payments</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="billing.css">
 </head>
 
 <body>
@@ -20,7 +20,7 @@
         </div>
 
         <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="sidebar">
-            <i class="fa-solid fa-bars"></i>
+            <i class="fa-solid fa-bars" style="position: sticky;"></i>
         </button>
     </div>
     <div class="main">
@@ -34,9 +34,9 @@
                 </div>
             </div>
             <nav class="nav-links">
-                <a class="active" href="#"><i class="fa-regular fa-house"></i> Dashboard</a>
-                <a href="/frontend/subscription.html"><i class="fa-solid fa-receipt"></i> My Subscription</a>
-                <a href="billing.html"><i class="fa-solid fa-wallet"></i> Billing & Payments</a>
+                <a href="index.html"><i class="fa-regular fa-house"></i> Dashboard</a>
+                <a href="subscription.html"><i class="fa-solid fa-receipt"></i> My Subscription</a>
+                <a class="active" href="#"><i class="fa-solid fa-wallet"></i> Billing & Payments</a>
                 <a href="#"><i class="fa-solid fa-file"></i> Invoices</a>
                 <a href="#"><i class="fa-regular fa-credit-card"></i> Payment Methods</a>
                 <a href="#"><i class="fa-solid fa-chart-line"></i> Usage</a>
@@ -59,7 +59,7 @@
             <div class="page-header">
                 <div>
                     <p class="name">Welcome back, Ananya! 👋</p>
-                    <h2>Here’s what’s happening with your subscription.</h2>
+                    <h2>Manage your payments, payments methods and billing prefrences.</h2>
                 </div>
                 <div class="actions">
                     <button class="icon-btn"><i class="fa-regular fa-bell"></i></button>
@@ -77,7 +77,7 @@
                     <div class="stat-icon"><i class="fa-solid fa-crown"></i></div>
                     <div>
                         <span class="stat-span">Current Plan</span>
-                        <h3>Pro Plan</h3>
+                        <h3>Pro Plan </h3>
                         <span class="tag active">Active</span>
                         <p>₹999 / month</p>
                     </div>
@@ -85,157 +85,172 @@
 
                 <div class="stat-card">
                     <div class="stat-icon"><i class="fa-regular fa-calendar-check"></i></div>
-                    <span class="stat-label">Next Billing Date</span>
-                    <h3>20 June 2025</h3>
-                    <p>5 days remaining</p>
+                    <div>
+                        <span class="stat-label">Next Billing Date</span>
+                        <h3>30 June 2026</h3>
+                        <p>5 days remaining</p>
+                    </div>
                 </div>
 
                 <div class="stat-card">
                     <div class="stat-icon"><i class="fa-solid fa-wallet"></i></div>
-                    <span class="stat-label">Amount</span>
-                    <h3>₹999.00</h3>
-                    <p>Billed monthly</p>
+                    <div>
+                        <span class="stat-label">Amount</span>
+                        <h3>₹999.00</h3>
+                        <p>Billed monthly</p>
+                    </div>
                 </div>
 
                 <div class="stat-card">
                     <div class="stat-icon"><i class="fa-solid fa-stopwatch"></i></div>
-                    <span class="stat-label">Status</span>
-                    <h3>Active</h3>
-                    <p>Auto-renew is on</p>
+                    <div>
+                        <span class="stat-label">Status</span>
+                        <h3>Active</h3>
+                        <p>Auto-renew is on</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="payment">
+                <div class="pay-d">
+                    <div class="add">
+                        <h3>Payments Methods </h3>
+                        <h4>+ Add New card</h4>
+                    </div>
+                    <div class="crd">
+                        <div class="c">
+                            <i class="fa-brands fa-cc-visa"></i>
+                            <h4>Visa ending in 8823 <span>Primary</span></h4>
+                        </div>
+                        <div class="e">
+                            <p>Expires 12/27</p>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                    </div>
+
+                    <div class="crd">
+                        <div class="c">
+                            <i class="fa-brands fa-cc-mastercard" aria-hidden="true"
+                                style="color: rgb(239, 167, 108);"></i>
+                            <h4>MasterCard ending in 0012 <span>Primary</span></h4>
+                        </div>
+                        <div class="e">
+                            <p>Expires 05/29</p>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                    </div>
+                    <div class="crd amx">
+                        <div class="c">
+                            <i class="fa-brands fa-cc-amex" aria-hidden="true" style="color: rgb(108, 239, 152);"></i>
+                            <h4>Amex Card ending in 0354 <span>Primary</span></h4>
+                        </div>
+                        <div class="e">
+                            <p>Expires 09/32</p>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="pay-d2">
+                    <h3>Billing Summary</h3>
+                    <table class="billing-summary">
+                        <tbody>
+                            <tr>
+                                <th scope="row">Plan</th>
+                                <td>Pro Plan</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Billing Cycle</th>
+                                <td>Monthly</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Subscription Amount</th>
+                                <td><i class="fa-solid fa-indian-rupee-sign"></i>999</td>
+                            </tr>
+                            <tr>
+                                <th class="row dis">Discount (WELCOME30)</th>
+                                <td class="row dis"><i class="fa-solid fa-indian-rupee-sign"></i>-198.80</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">SubTotal</th>
+                                <td><i class="fa-solid fa-indian-rupee-sign"></i>799.20</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Tax(18% GST)</th>
+                                <td><i class="fa-solid fa-indian-rupee-sign"></i>143.86</td>
+                            </tr>
+                            <tr>
+                                <th class="row total">Total Amount</th>
+                                <td class="row total"><i class="fa-solid fa-indian-rupee-sign"></i>943.06</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                    <button class="btn">update Billing Preferences</button>
                 </div>
             </div>
 
-            <section class="dashboard-grid">
-                <div class="card">
-                    <div class="card-header">
-                        <h3>Subscription Overview</h3>
-                        <a href="#">View Details</a>
-                    </div>
-                    <div class="card-inner">
-                        <div class="card-summary">
-                            <div class="icon">
-                                <i class="fa-solid fa-crown"></i>
-                            </div>
-                            <h4>You are on Pro Plan</h4>
-                            <p>Enjoy unlimited features and priority support.</p>
-                            <button class="primary-btn">Upgrade Plan</button>
-                        </div>
-                        <div class="overview-list">
-                            <div><i class="fa-solid fa-check"></i> Unlimited Projects</div>
-                            <div><i class="fa-solid fa-check"></i> 100 GB Storage</div>
-                            <div><i class="fa-solid fa-check"></i> Priority Support</div>
-                            <div><i class="fa-solid fa-check"></i> Advanced Analytics</div>
-                            <div><i class="fa-solid fa-check"></i> Custom Domain</div>
-                            <div><i class="fa-solid fa-check"></i> API Access</div>
-                        </div>
-                    </div>
+            <div class="history">
+                <div class="all">
+                    <h3>Transaction History</h3>
+                    <p>View All Invoices <i class="fa-solid fa-arrow-right"></i></p>
                 </div>
 
-                <div class="card usage-card">
-                    <div class="card-header">
-                        <h3>Usage Overview</h3>
-                        <select>
-                            <option>This Month</option>
-                            <option>Last Month</option>
-                            <option>Last 6 Month</option>
-                        </select>
-                    </div>
-                    <div class="usage-item">
-                        <div>
-                            <span>Storage</span>
-                            <strong>65 GB / 100 GB</strong>
-                        </div>
-                        <div class="progress"><span style="width:65%"></span></div>
-                    </div>
-                    <div class="usage-item">
-                        <div>
-                            <span>Projects</span>
-                            <strong>23 / Unlimited</strong>
-                        </div>
-                        <div class="progress"><span style="width:70%"></span></div>
-                    </div>
-                    <div class="usage-item">
-                        <div>
-                            <span>API Calls</span>
-                            <strong>12,680 / 50,000</strong>
-                        </div>
-                        <div class="progress"><span style="width:55%"></span></div>
-                    </div>
-                </div>
-
-                <div class="card invoices-card">
-                    <div class="card-header">
-                        <h3>Recent Invoices</h3>
-                        <a href="#">View All</a>
-                    </div>
-                    <table>
+                <div class="hist-wrap">
+                    <table class="hist">
                         <thead>
                             <tr>
-                                <th>Invoice ID</th>
                                 <th>Date</th>
+                                <th>Description</th>
+                                <th>Invoice ID</th>
                                 <th>Amount</th>
+                                <th>Payment Method</th>
                                 <th>Status</th>
-                                <th></th>
+                                <th>Receipt</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>INV-2025-00045</td>
-                                <td>20 May 2025</td>
-                                <td>₹999.00</td>
-                                <td class="status paid">Paid</td>
+                                <td>12 June</td>
+                                <td>Hello</td>
+                                <td>145829-Visa</td>
+                                <td><i class="fa-solid fa-indian-rupee-sign"></i>999</td>
+                                <td>Mastercard</td>
+                                <td><span class="paid">Paid</span></td>
                                 <td><i class="fa-solid fa-download"></i></td>
                             </tr>
                             <tr>
-                                <td>INV-2025-00044</td>
-                                <td>20 Apr 2025</td>
-                                <td>₹999.00</td>
-                                <td class="status paid">Paid</td>
+                                <td>12 June</td>
+                                <td>Hello</td>
+                                <td>145829-Visa</td>
+                                <td><i class="fa-solid fa-indian-rupee-sign"></i>999</td>
+                                <td>Mastercard</td>
+                                <td><span class="paid">Paid</span></td>
                                 <td><i class="fa-solid fa-download"></i></td>
                             </tr>
                             <tr>
-                                <td>INV-2025-00043</td>
-                                <td>20 Mar 2025</td>
-                                <td>₹999.00</td>
-                                <td class="status paid">Paid</td>
+                                <td>12 June</td>
+                                <td>Hello</td>
+                                <td>145829-Visa</td>
+                                <td><i class="fa-solid fa-indian-rupee-sign"></i>999</td>
+                                <td>Mastercard</td>
+                                <td><span class="paid">Paid</span></td>
                                 <td><i class="fa-solid fa-download"></i></td>
                             </tr>
                             <tr>
-                                <td>INV-2025-59043</td>
-                                <td>14 Apr 2025</td>
-                                <td>₹999.00</td>
-                                <td class="status cancel">cancelled</td>
+                                <td>12 June</td>
+                                <td>Hello</td>
+                                <td>145829-Visa</td>
+                                <td><i class="fa-solid fa-indian-rupee-sign"></i>999</td>
+                                <td>Mastercard</td>
+                                <td><span class="paid">Paid</span></td>
                                 <td><i class="fa-solid fa-download"></i></td>
                             </tr>
+                            
                         </tbody>
                     </table>
                 </div>
-
-                <div class="card billing-card">
-                    <h3>Billing & Payment</h3>
-                    <div class="billing-row">
-                        <span>Payment Method</span>
-                        <strong><i class="fa-brands fa-cc-visa"></i> **** 4242</strong>
-                    </div>
-                    <div class="billing-row">
-                        <span>Billing Cycle</span>
-                        <strong>Monthly</strong>
-                    </div>
-                    <div class="billing-row">
-                        <span>Next Billing Date</span>
-                        <strong>20 June 2025</strong>
-                    </div>
-                    <div class="billing-row">
-                        <span>Auto Renew</span>
-                        <strong>On</strong>
-                    </div>
-                    <div class="billing-row">
-                        <span>Tax</span>
-                        <strong>18% GST</strong>
-                    </div>
-                    <button class="secondary-btn">Update Billing Preferences</button>
-                </div>
-            </section>
+            </div>
         </main>
     </div>
 
