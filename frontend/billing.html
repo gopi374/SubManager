@@ -37,8 +37,7 @@
                 <a href="index.html"><i class="fa-regular fa-house"></i> Dashboard</a>
                 <a href="subscription.html"><i class="fa-solid fa-receipt"></i> My Subscription</a>
                 <a class="active" href="#"><i class="fa-solid fa-wallet"></i> Billing & Payments</a>
-                <a href="#"><i class="fa-solid fa-file"></i> Invoices</a>
-                <a href="#"><i class="fa-regular fa-credit-card"></i> Payment Methods</a>
+                <a href="invoice.html"><i class="fa-solid fa-file"></i> Invoices</a>
                 <a href="#"><i class="fa-solid fa-chart-line"></i> Usage</a>
                 <a href="#"><i class="fa-solid fa-ticket"></i> Coupons</a>
                 <a href="#"><i class="fa-solid fa-gear"></i> Account Settings</a>
@@ -254,32 +253,7 @@
         </main>
     </div>
 
-    <script>
-        const menuBtn = document.getElementById("menuBtn");
-        const sidebar = document.getElementById("sidebar");
-        const overlay = document.getElementById("overlay");
-
-        function openSidebar() {
-            sidebar.classList.add("open");
-            overlay.classList.add("show");
-            menuBtn.setAttribute("aria-expanded", "true");
-        }
-
-        function closeSidebar() {
-            sidebar.classList.remove("open");
-            overlay.classList.remove("show");
-            menuBtn.setAttribute("aria-expanded", "false");
-        }
-
-        menuBtn.addEventListener("click", () => {
-            if (sidebar.classList.contains("open")) {
-                closeSidebar();
-            } else {
-                openSidebar();
-            }
-        });
-
-        overlay.addEventListener("click", closeSidebar);
+    <script src="script.js">
     </script>
 </body>
 
